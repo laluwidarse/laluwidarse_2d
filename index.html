@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h3>
+            Lalu Widarse
+            20081000004
+            2D
+        </h3>
+        <meta charset="utf-8">
+         <title>BMI Calculator</title>
+    </head>
+    <style media="screen">
+      body{
+          margin: 0:
+          padding: 0;
+          text-align: center;
+          font-family: sans-serif;
+          background-image: linear-gradient(120deg,#DBDE2E, #DBDE2E);
+          min-height: 100vh;
+      }
+      div{
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #1A96C1;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px #ff0000;
+      }
+      h2{
+          font-size: 30px;
+          font-weight: 600;
+      }
+      .text{
+          text-align: left;
+          margin-left: 150px;
+      }
+      #w, #h{
+          color: #222f3e;
+          text-align: left;
+          font-size: 20px;
+          font-weight: 200;
+          outline: none;
+          border: none;
+          background: none;
+          border-bottom: 1px solid #06b8ff;
+          width: 200px;
+      }
+      #w:focus, #h:focus{
+          border-bottom: 2px solid #06b8ff;
+          width: 300px;
+          transition: 5.s;
+      }
+      #result,{
+            color: #06b8ff;
+        }
+        #btn{
+            font-family: inherit;
+            margin-top: 10px;
+            border: none;
+            color: #ff0000;
+            background-image: linear-gradient(120deg,#DBDE2E, #DBDE2E);
+            width: 150px;
+            padding: 10px;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+        }
+        #btn:hover{
+            box-shadow: 1px 1px 10px #06b8ff;
+        }
+        #info{
+            font-size: 20px;
+            font-family: inherit;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function BMI() {
+            var h=document.getElementById('h').value;
+            var w=document.getElementById('w').value;
+            var bmi=w/(h/100*h/100);
+            var bmio=(bmi.toFixed(2));
+
+            document.getElementById("result").innerHTML="Your BMI is " + bmio;
+        }
+    </script>
+    <body>
+        <div>
+            <h2>BMI Calculator</h2>
+            <p class="text">Height</p>
+            <input type="text" id="h">
+            <p class="text">Weight</p>
+            <input type="text" id="w">
+            <p id="result"></p>
+            <button id="btn" onclick="BMI()">Calculator</button>
+            <p id="info">Please enter Height [cm] and Weight [kg]</p>
+        </div>
+    </body>
+</html>
